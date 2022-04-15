@@ -3,19 +3,19 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
-interface LayoutProps {
+interface ProtectedPageLayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: FC<LayoutProps> = ({ children }) => {
+const ProtectedPageLayout: FC<ProtectedPageLayoutProps> = ({ children }) => {
   return (
     <>
-      <Header />
-      <Sidebar />
+      {/* <Header />
+      <Sidebar /> */}
       <main>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
 
-export default Layout;
+export default ProtectedPageLayout;

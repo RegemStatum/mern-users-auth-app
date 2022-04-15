@@ -3,6 +3,7 @@ const app = express();
 import dotenv from "dotenv";
 dotenv.config();
 import "express-async-errors";
+import cors from "cors";
 
 // routers
 import authRouter from "./routes/authRoutes.js";
@@ -16,6 +17,7 @@ import errorHandlerMiddleware from "./middleware/error-handler.js";
 import connectDB from "./db/connect.js";
 
 app.use(express.json());
+app.use(cors());
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/books", booksRouter);
 

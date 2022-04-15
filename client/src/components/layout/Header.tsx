@@ -5,6 +5,6 @@ const Header: FC = () => {
   return <Wrapper>Header</Wrapper>;
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.header``;
 
 export default Header;

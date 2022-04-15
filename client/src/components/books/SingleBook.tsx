@@ -1,10 +1,17 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
+import { IBook } from "../../types/book";
 
-interface SingleBookProps {}
+interface SingleBookProps {
+  bookId: string;
+}
 
-const SingleBook: FC<SingleBookProps> = () => {
-  return <Wrapper>SingleBook</Wrapper>;
+const SingleBook: FC<SingleBookProps> = ({ bookId }) => {
+  const [book, setBook] = useState<IBook>();
+
+  const fetchBookInfo = async () => {};
+
+  return <Wrapper>{bookId}</Wrapper>;
 };
 
 const Wrapper = styled.div``;

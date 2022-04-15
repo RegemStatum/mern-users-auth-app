@@ -5,6 +5,6 @@ const Footer: FC = () => {
   return <Wrapper>Footer</Wrapper>;
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.footer``;
 
 export default Footer;

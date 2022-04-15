@@ -1,31 +1,37 @@
 import React, { FC } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "../components/layout/Layout";
-import {
-  HomePage,
-  LoginPage,
-  RegisterPage,
-  BooksPage,
-  ErrorPage,
-  UserPage,
-} from "./all-pages";
+import { LoginPage, RegisterPage, HomePage, ErrorPage } from "../pages/public";
+import { BooksPage, UserPage } from "../pages/protected";
+import ProtectedPage from "./protected/ProtectedPage";
+import SingleBookPage from "./protected/SingleBookPage";
 
 const PagesRouting: FC = () => {
   return (
     <Router>
-      <Layout>
-        <Routes>
-          {/* auth and user pages */}
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/user" element={<UserPage />} />
-          {/* content pages */}
-          <Route path="/" element={<HomePage />} />
-          <Route path="/books" element={<BooksPage />} />
-          {/* error page */}
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/">
+          {/* home page */}
+          <Route index element={<HomePage />} />
+          {/* auth pages */}
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          {/* protected pages */}
+          <Route
+            path="user"
+            element={
+              <ProtectedPage>
+                <UserPage />
+              </ProtectedPage>
+            }
+          />
+          <Route path="books">
+            <Route index element={<BooksPage />} />
+            <Route path=":bookId" element={<SingleBookPage />} />
+          </Route>
+        </Route>
+        {/* error page */}
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
     </Router>
   );
 };

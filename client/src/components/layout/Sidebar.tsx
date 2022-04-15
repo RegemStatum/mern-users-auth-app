@@ -5,6 +5,6 @@ const Sidebar: FC = () => {
   return <Wrapper>Sidebar</Wrapper>;
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.aside``;
 
 export default Sidebar;
