@@ -4,5 +4,8 @@
 # public
 /public
 
+# env
+.env
+
 #client node modules
 /client/node_modules
