@@ -3,3 +3,6 @@
 
 # public
 /public
+
+#client node modules
+/client/node_modules

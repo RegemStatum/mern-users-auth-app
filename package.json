@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "concurrently \"tsc -w\" \"nodemon public/js/server.js\""
+    "server": "concurrently \"tsc -w\" \"nodemon public/js/server.js\"",
+    "client": "npm start --prefix client",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\" "
   },
   "author": "Al_Kon",
   "license": "ISC",
