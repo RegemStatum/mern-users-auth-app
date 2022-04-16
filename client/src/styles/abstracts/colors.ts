@@ -1,69 +1,57 @@
 // Primary colors
-// purple
-export const pr_prl_1 = "#102a43";
-export const pr_prl_2 = "#243b53";
-export const pr_prl_3 = "#334e68";
-export const pr_prl_4 = "#486581";
-export const pr_prl_5 = "#627d98";
-export const pr_prl_6 = "#829ab1";
-export const pr_prl_7 = "#9fb3c8";
-export const pr_prl_8 = "#bcccdc";
-export const pr_prl_9 = "#d9e2ec";
-export const pr_prl_10 = "#f0f4f8";
+export const pr_red_1 = "#FFEEEE";
+export const pr_red_2 = "#FACDCD";
+export const pr_red_3 = "#F29B9B";
+export const pr_red_4 = "#E66A6A";
+export const pr_red_5 = "#D64545";
+export const pr_red_6 = "#BA2525";
+export const pr_red_7 = "#A61B1B";
+export const pr_red_8 = "#911111";
+export const pr_red_9 = "#780A0A";
+export const pr_red_10 = "#610404";
+
+export const pr_ylw_1 = "#FFFBEA";
+export const pr_ylw_2 = "#FFF3C4";
+export const pr_ylw_3 = "#FCE588";
+export const pr_ylw_4 = "#FADB5F";
+export const pr_ylw_5 = "#F7C948";
+export const pr_ylw_6 = "#F0B429";
+export const pr_ylw_7 = "#DE911D";
+export const pr_ylw_8 = "#CB6E17";
+export const pr_ylw_9 = "#B44D12";
+export const pr_ylw_10 = "#8D2B0B";
+
 // Neutrals
-export const nt_1 = "#102a43";
-export const nt_2 = "#243b53";
-export const nt_3 = "#334e68";
-export const nt_4 = "#486581";
-export const nt_5 = "#627d98";
-export const nt_6 = "#829ab1";
-export const nt_7 = "#9fb3c8";
-export const nt_8 = "#bcccdc";
-export const nt_9 = "#d9e2ec";
-export const nt_10 = "#f0f4f8";
+export const nt_1 = "#FAF9F7";
+export const nt_2 = "#E8E6E1";
+export const nt_3 = "#D3CEC4";
+export const nt_4 = "#B8B2A7";
+export const nt_5 = "#A39E93";
+export const nt_6 = "#857F72";
+export const nt_7 = "#625D52";
+export const nt_8 = "#504A40";
+export const nt_9 = "#423D33";
+export const nt_10 = "#27241D";
 
 // Supporting
-// red
-export const sp_red_1 = "#610316";
-export const sp_red_2 = "#8a041a";
-export const sp_red_3 = "#ab091e";
-export const sp_red_4 = "#cf1124";
-export const sp_red_5 = "#e12d39";
-export const sp_red_6 = "#ef4e4e";
-export const sp_red_7 = "#f86a6a";
-export const sp_red_8 = "#ff9b9b";
-export const sp_red_9 = "#ffbdbd";
-export const sp_red_10 = "#ffe3e3";
-// yellow
-export const sp_ylw_1 = "#8d2b0b";
-export const sp_ylw_2 = "#b44d12";
-export const sp_ylw_3 = "#cb6e17";
-export const sp_ylw_4 = "#de911d";
-export const sp_ylw_5 = "#f0b429";
-export const sp_ylw_6 = "#f7c948";
-export const sp_ylw_7 = "#fadb5f";
-export const sp_ylw_8 = "#fce588";
-export const sp_ylw_9 = "#fff3c4";
-export const sp_ylw_10 = "#fffbea";
-// blue
-export const sp_ble_1 = "#035388";
-export const sp_ble_2 = "#0b69a3";
-export const sp_ble_3 = "#127fbf";
-export const sp_ble_4 = "#1992d4";
-export const sp_ble_5 = "#2bb0ed";
-export const sp_ble_6 = "#40c3f7";
-export const sp_ble_7 = "#5ed0fa";
-export const sp_ble_8 = "#81defd";
-export const sp_ble_9 = "#b3ecff";
-export const sp_ble_10 = "#e3f8ff";
-// teal
-export const sp_tel_1 = "#014d40";
-export const sp_tel_2 = "#0c6b58";
-export const sp_tel_3 = "#147d64";
-export const sp_tel_4 = "#199473";
-export const sp_tel_5 = "#27ab83";
-export const sp_tel_6 = "#3ebd93";
-export const sp_tel_7 = "#65d6ad";
-export const sp_tel_8 = "#8eedc7";
-export const sp_tel_9 = "#c6f7e2";
-export const sp_tel_10 = "#effcf6";
+export const sp_can_1 = "#E0FCFF";
+export const sp_can_2 = "#BEF8FD";
+export const sp_can_3 = "#87EAF2";
+export const sp_can_4 = "#54D1DB";
+export const sp_can_5 = "#38BEC9";
+export const sp_can_6 = "#2CB1BC";
+export const sp_can_7 = "#14919B";
+export const sp_can_8 = "#0E7C86";
+export const sp_can_9 = "#0A6C74";
+export const sp_can_10 = "#044E54";
+
+export const sp_grn_1 = "#F2FDE0";
+export const sp_grn_2 = "#E2F7C2";
+export const sp_grn_3 = "#C7EA8F";
+export const sp_grn_4 = "#ABDB5E";
+export const sp_grn_5 = "#94C843";
+export const sp_grn_6 = "#7BB026";
+export const sp_grn_7 = "#63921A";
+export const sp_grn_8 = "#507712";
+export const sp_grn_9 = "#42600C";
+export const sp_grn_10 = "#2B4005";

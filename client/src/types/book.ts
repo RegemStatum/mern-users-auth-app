@@ -22,10 +22,12 @@ interface MongoBook extends IBook {
 
 interface BooksState {
   books: Array<FormattedBook>;
+  singleBook: IBook;
 }
 
 enum booksReducerActions {
   SET_BOOKS = "SET_BOOKS",
+  SET_SINGLE_BOOK = "SET_SINGLE_BOOK",
 }
 
 interface SetBooksAction {
@@ -33,7 +35,12 @@ interface SetBooksAction {
   payload: Array<FormattedBook>;
 }
 
-type booksActions = SetBooksAction;
+interface SetSingleBookAction {
+  type: booksReducerActions.SET_SINGLE_BOOK;
+  payload: IBook;
+}
+
+type booksActions = SetBooksAction | SetSingleBookAction;
 
 export type { MongoBook, IBook, FormattedBook, BooksState, booksActions };
 export { booksReducerActions };

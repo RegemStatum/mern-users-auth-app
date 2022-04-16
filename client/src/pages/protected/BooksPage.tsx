@@ -4,7 +4,7 @@ import BooksGrid from "../../components/books/BooksGrid";
 
 const BooksPage: FC = () => {
   return (
-    <Wrapper>
+    <Wrapper className="container">
       <BooksGrid />
     </Wrapper>
   );

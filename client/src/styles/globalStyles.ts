@@ -13,6 +13,7 @@ body {
   h4,
   h5 {
     font-family: "Roboto", sans-serif;
+    
   }
 
   // xs
@@ -26,7 +27,7 @@ body {
 }
 
 .container {
-  margin: 0 ${st.indentations.ind_800};
+  margin: 0 ${st.indentations.ind_400};
 
   @media (min-width: ${st.breakpoints.md}) {
     margin: 0 ${st.indentations.ind_1200};

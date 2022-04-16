@@ -10,7 +10,7 @@ const InputWr = styled.input`
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px ${st.colors.sp_ble_5};
+    box-shadow: 0 0 0 2px ${st.colors.sp_grn_5};
   }
 `;
 

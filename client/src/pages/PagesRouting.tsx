@@ -25,8 +25,22 @@ const PagesRouting: FC = () => {
             }
           />
           <Route path="books">
-            <Route index element={<BooksPage />} />
-            <Route path=":bookId" element={<SingleBookPage />} />
+            <Route
+              index
+              element={
+                <ProtectedPage>
+                  <BooksPage />
+                </ProtectedPage>
+              }
+            />
+            <Route
+              path=":bookId"
+              element={
+                <ProtectedPage>
+                  <SingleBookPage />
+                </ProtectedPage>
+              }
+            />
           </Route>
         </Route>
         {/* error page */}

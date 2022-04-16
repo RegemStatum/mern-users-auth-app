@@ -8,7 +8,7 @@ const SingleBookPage: FC = () => {
   const bookId = params.bookId!;
 
   return (
-    <Wrapper>
+    <Wrapper className="container">
       <SingleBook bookId={bookId} />
     </Wrapper>
   );
