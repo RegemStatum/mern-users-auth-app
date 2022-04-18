@@ -28,7 +28,9 @@ const SingleBook: FC<SingleBookProps> = ({ bookId }) => {
     return (
       <Wrapper>
         <p>There is no such book</p>
-        <Link to="/books">Back to all books</Link>
+        <Link to="/books">
+          <Button onClick={null}>Back to all books</Button>
+        </Link>
       </Wrapper>
     );
   }

@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import st from "../../styles";
 
@@ -6,8 +7,9 @@ type ButtonView = "primary" | "secondary" | "tertiary";
 
 interface ButtonProps {
   view?: ButtonView;
-  className?: string;
   type?: "submit" | "button";
+  to?: string;
+  className?: string;
   children: string;
   onClick: any;
 }
@@ -15,10 +17,26 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = ({
   view = "primary",
   type = "submit",
+  to = "/error",
   children,
   onClick,
   className,
 }) => {
+  if (to !== "/error") {
+    return (
+      <Link to={to}>
+        <Wrapper
+          onClick={onClick}
+          className={className}
+          view={view}
+          type={type}
+        >
+          {children}
+        </Wrapper>
+      </Link>
+    );
+  }
+
   return (
     <Wrapper onClick={onClick} className={className} view={view} type={type}>
       {children}

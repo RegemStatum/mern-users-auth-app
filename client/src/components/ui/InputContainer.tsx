@@ -11,7 +11,7 @@ interface InputProps {
 }
 
 interface TextInputProps extends InputProps {
-  type: "text";
+  type: "text" | "email";
   value: string;
   minLength?: number;
   maxLength?: number;
@@ -33,7 +33,7 @@ const InputContainer: FC<InputContainerProps> = (props) => {
     required = true;
   }
 
-  if (props.type === "text") {
+  if (props.type === "text" || props.type === "email") {
     let minLength = props.minLength || 0;
     let maxLength = props.maxLength || Infinity;
 

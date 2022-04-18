@@ -11,7 +11,7 @@ const ProtectedPage: FC<ProtectedPageProps> = ({
   children,
   redirectPath = "/login",
 }) => {
-  const isUser = true;
+  const isUser = false;
 
   return isUser ? (
     <ProtectedPageLayout>{children}</ProtectedPageLayout>

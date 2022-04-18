@@ -44,6 +44,7 @@ const BooksGrid: FC<BooksGridProps> = () => {
 const Wrapper = styled.div`
   display: grid;
   gap: ${st.indentations.ind_800};
+  margin-bottom: ${st.indentations.ind_1400};
 
   .no-books {
     grid-column: 1/-1;
