@@ -29,12 +29,13 @@ const formatSingleBook = (book: MongoBook): IBook => {
 
 const formatBooks = (books: MongoBook[]): FormattedBook[] => {
   return books.map((book) => {
-    const { _id: bookId, name, author, price } = book;
+    const { _id: bookId, name, author, price, isbn13 } = book;
     return {
       bookId,
       name,
       author,
       price,
+      isbn13,
     };
   });
 };

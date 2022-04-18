@@ -1,9 +1,9 @@
 import React, { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useBookContext } from "../../context/BooksContext";
-import st from "../../styles";
-import ButtonWr from "../../styles/mixins/Button";
+import { useBookContext } from "../../../context/BooksContext";
+import st from "../../../styles";
+import Button from "../../ui/Button";
 import SingleBookMoreInfo from "./SingleBookMoreInfo";
 
 interface SingleBookProps {
@@ -13,10 +13,9 @@ interface SingleBookProps {
 const SingleBook: FC<SingleBookProps> = ({ bookId }) => {
   const { singleBook, setSingleBook } = useBookContext();
   const [isLoading, setIsLoading] = useState(true);
-  const [isShownMoreInfo, setIsShownMoreInfo] = useState(false);
 
   useEffect(() => {
-    console.log("Setting", bookId);
+    setIsLoading(true);
     setSingleBook(bookId);
     setIsLoading(false);
   }, [bookId, setSingleBook]);
@@ -61,7 +60,9 @@ const SingleBook: FC<SingleBookProps> = ({ bookId }) => {
         isbn13={isbn13}
       />
       <Link to="/books">
-        <ButtonWr>To all books</ButtonWr>
+        <Button onClick={null} view="secondary">
+          To all books
+        </Button>
       </Link>
     </Wrapper>
   );
@@ -78,9 +79,9 @@ const Wrapper = styled.div`
 
   .price {
     margin-top: ${st.indentations.ind_1600};
-    font-size: ${st.fontSizes.fs_900};
+    font-size: ${st.fontSizes.fs_1000};
     font-weight: 600;
-    color: ${st.colors.pr_red_6};
+    color: ${st.colors.sp_grn_9};
   }
 `;
 

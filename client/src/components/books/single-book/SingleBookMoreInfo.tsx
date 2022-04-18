@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import st from "../../styles";
-import { IBook } from "../../types/book";
+import st from "../../../styles";
+import { IBook } from "../../../types/book";
 
 type SingleBookMoreInfoProps = Pick<
   IBook,

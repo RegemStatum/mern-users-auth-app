@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import SingleBook from "../../components/books/SingleBook";
+import SingleBook from "../../components/books/single-book/SingleBook";
 
 const SingleBookPage: FC = () => {
   const params = useParams();

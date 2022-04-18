@@ -37,9 +37,9 @@ const Wrapper = styled.div`
   }
 
   p:last-of-type {
-    font-size: ${st.fontSizes.fs_800};
+    font-size: ${st.fontSizes.fs_900};
     font-weight: 600;
-    color: ${st.colors.pr_red_6};
+    color: ${st.colors.sp_grn_9};
   }
 `;
 

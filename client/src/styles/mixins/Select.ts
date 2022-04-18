@@ -1,16 +1,19 @@
 import styled from "styled-components";
 import st from "..";
 
-const InputWr = styled.input`
+const SelectWr = styled.select`
   width: 100%;
-  font-size: ${st.fontSizes.fs_300};
   padding: ${st.indentations.ind_600} ${st.indentations.ind_400};
   border-radius: ${st.borderRadiuses.br_1};
-  font-family: "Roboto", sans-serif;
+
+  & > option {
+    font-family: "Roboto", sans-serif;
+    font-size: ${st.fontSizes.fs_300};
+  }
 
   &:focus {
     outline: none;
   }
 `;
 
-export default InputWr;
+export default SelectWr;

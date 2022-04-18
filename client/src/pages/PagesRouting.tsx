@@ -1,9 +1,13 @@
 import React, { FC } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LoginPage, RegisterPage, HomePage, ErrorPage } from "../pages/public";
-import { BooksPage, UserPage } from "../pages/protected";
+import {
+  BooksPage,
+  UserPage,
+  SingleBookPage,
+  BooksManagePage,
+} from "../pages/protected";
 import ProtectedPage from "./protected/ProtectedPage";
-import SingleBookPage from "./protected/SingleBookPage";
 
 const PagesRouting: FC = () => {
   return (
@@ -38,6 +42,14 @@ const PagesRouting: FC = () => {
               element={
                 <ProtectedPage>
                   <SingleBookPage />
+                </ProtectedPage>
+              }
+            />
+            <Route
+              path="books-manage"
+              element={
+                <ProtectedPage>
+                  <BooksManagePage />
                 </ProtectedPage>
               }
             />

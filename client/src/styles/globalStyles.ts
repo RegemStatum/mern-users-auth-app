@@ -35,7 +35,7 @@ body {
 
   @media (min-width: ${st.breakpoints.lg}) {
     margin: 0 auto;
-    max-width: 60rem;
+    max-width: 70rem;
   }
 }
 
