@@ -1,8 +1,7 @@
 import mongoose from "mongoose";
 import IBook from "../types/book.js";
-import { MongoError } from "mongodb";
 
-const { Schema, model, Error } = mongoose;
+const { Schema, model } = mongoose;
 
 const bookSchema = new Schema<IBook>(
   {

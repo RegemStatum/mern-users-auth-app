@@ -36,7 +36,14 @@ const errorHandlerMiddleware = (
     )} fields must be unique`;
   }
 
+  // not found error
   if (error.statusCode === 404) {
+    defaultError.status = error.statusCode;
+    defaultError.message = error.message;
+  }
+
+  // bad request error
+  if (error.statusCode === 400) {
     defaultError.status = error.statusCode;
     defaultError.message = error.message;
   }
