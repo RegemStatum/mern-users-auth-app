@@ -29,6 +29,11 @@ const errorHandlerMiddleware = (
     defaultError.message = error.message;
   }
 
+  if (error.name === "JsonWebTokenError") {
+    defaultError.status = 400;
+    defaultError.message = error.message;
+  }
+
   if (error.code && error.code === 11000) {
     defaultError.status = 400;
     defaultError.message = `${Object.keys(

@@ -1,28 +1,70 @@
 import React, { FC, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { useAppContext } from "../../context/AppContext";
 import st from "../../styles";
+import handleAuth, { UserPostBody } from "../../utils/handleAuth";
 import Button from "../ui/Button";
 import InputContainer from "../ui/InputContainer";
+import SubmitBadges from "../ui/SubmitBadges";
 
 interface AuthFormProps {
   type: "login" | "register";
 }
 
 const AuthForm: FC<AuthFormProps> = ({ type }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
   const [userInfo, setUserInfo] = useState({
     email: "",
     name: "",
     password: "",
-    type,
   });
+  const { setUserInfo: setAppUserInfo } = useAppContext();
+  const navigate = useNavigate();
 
   const handleInputChange = (e: React.SyntheticEvent) => {
     const target = e.target as HTMLInputElement;
     setUserInfo({ ...userInfo, [target.name]: target.value });
   };
 
-  const handleSubmit = (e: React.SyntheticEvent) => {};
+  const handleSubmit = async (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    let postBody: UserPostBody = {
+      email: "",
+      password: "",
+    };
+    let navigateTo = "";
+
+    if (type === "register") {
+      postBody = {
+        name: userInfo.name,
+        email: userInfo.email,
+        password: userInfo.password,
+      };
+      navigateTo = "/login";
+    }
+
+    if (type === "login") {
+      postBody = {
+        email: userInfo.email,
+        password: userInfo.password,
+      };
+      navigateTo = "/books";
+    }
+    await handleAuth(
+      type,
+      postBody,
+      setAppUserInfo,
+      setErrorMsg,
+      setIsLoading,
+      setIsSuccess,
+      navigate,
+      navigateTo
+    );
+  };
 
   const changeFormText =
     type === "login" ? (
@@ -63,6 +105,13 @@ const AuthForm: FC<AuthFormProps> = ({ type }) => {
           onChange={handleInputChange}
         />
       </div>
+      <SubmitBadges
+        isLoading={isLoading}
+        isSuccess={isSuccess}
+        setIsSuccess={setIsSuccess}
+        errorMsg={errorMsg}
+        setErrorMsg={setErrorMsg}
+      />
       <Button view="secondary" onClick={handleSubmit}>
         Submit
       </Button>

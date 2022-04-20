@@ -3,6 +3,9 @@ import IUser from "../types/user";
 import User from "../models/User.js";
 import { BadRequestError } from "../error/index.js";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
 
 const login = async (req: Request, res: Response) => {
   const body: Omit<IUser, "name"> = req.body;
@@ -89,4 +92,22 @@ const getInfo = async (req: Request, res: Response) => {
   });
 };
 
-export { login, register, getInfo };
+const verifyToken = (req: Request, res: Response) => {
+  const token = req.body.token;
+
+  if (!token) {
+    throw new BadRequestError("No token provided");
+  }
+
+  const isValid = jwt.verify(token, process.env.JWT_SECRET!);
+  // jwt will throw a custom error if token is not valid
+  // this is double check
+  if (!isValid) {
+    res.status(400).json({ isValid: false, message: "Token is not valid" });
+    return;
+  }
+
+  res.status(200).json({ isValid: true, message: "Token is valid" });
+};
+
+export { login, register, getInfo, verifyToken };
