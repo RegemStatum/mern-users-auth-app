@@ -29,12 +29,15 @@ const login = async (req: Request, res: Response) => {
   }
   const token = user.createJWT();
 
+  const isAdmin = email === process.env.ADMIN_EMAIL ? true : false;
+
   res.status(200).json({
     user: {
       name: user.name,
       email: user.email,
     },
     token,
+    isAdmin,
     message: "Successful login",
   });
 };

@@ -6,11 +6,14 @@ import { getLocalStorage, saveInLocalStorage } from "../utils/storage";
 const appReducerInitialState: AppReducerState = {
   user: getLocalStorage().user,
   token: getLocalStorage().token,
+  isAdmin: false,
 };
 
 const Context = React.createContext({
   ...appReducerInitialState,
   setUserInfo: (user: IUser, token: string) => {},
+  setAdmin: (isAdmin: boolean) => {},
+  logOut: () => {},
 });
 
 interface AppContextProps {
@@ -33,9 +36,24 @@ const AppContext: FC<AppContextProps> = ({ children }) => {
     });
   };
 
+  const setAdmin = (isAdmin: boolean) => {
+    dispatch({ type: AppReducerActions.SET_ADMIN, payload: isAdmin });
+  };
+
+  const logOut = () => {
+    dispatch({ type: AppReducerActions.LOG_OUT });
+  };
+
   return (
     <Context.Provider
-      value={{ user: state.user, token: state.token, setUserInfo }}
+      value={{
+        user: state.user,
+        token: state.token,
+        isAdmin: state.isAdmin,
+        setUserInfo,
+        setAdmin,
+        logOut,
+      }}
     >
       {children}
     </Context.Provider>

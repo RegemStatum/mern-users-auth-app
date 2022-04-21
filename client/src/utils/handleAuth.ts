@@ -10,14 +10,15 @@ export interface UserPostBody {
 type SetAppUserInfo = (user: IUser, token: string) => void;
 
 const handleAuth = async (
-  type: string,
+  type: "login" | "register",
   postBody: UserPostBody,
   setAppUserInfo: SetAppUserInfo,
   setErrorMsg: React.Dispatch<React.SetStateAction<string>>,
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
   setIsSuccess: React.Dispatch<React.SetStateAction<boolean>>,
   navigate: NavigateFunction,
-  navigateTo: string
+  navigateTo: string,
+  setAdmin: (isAdmin: boolean) => void
 ) => {
   try {
     const response = await fetch(`http://localhost:8079/api/v1/auth/${type}`, {
@@ -33,6 +34,11 @@ const handleAuth = async (
       setErrorMsg(data.message || "Something went wrong");
       setIsLoading(false);
       return;
+    }
+
+    if (type === "login") {
+      const isAdmin = data.isAdmin;
+      setAdmin(isAdmin);
     }
 
     const { user, token } = data;

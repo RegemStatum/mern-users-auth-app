@@ -1,18 +1,23 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useAppContext } from "../../context/AppContext";
 import st from "../../styles";
 import Button from "../ui/Button";
 import FindBooks from "./FindBooks";
 
 const BooksControl: FC = () => {
+  const { isAdmin } = useAppContext();
+
   return (
     <Wrapper>
       <FindBooks />
       <Link to="/books/books-manage">
-        <Button view="tertiary" className="manage-btn" onClick={null}>
-          Manage books
-        </Button>
+        {isAdmin && (
+          <Button view="tertiary" className="manage-btn" onClick={null}>
+            Manage books
+          </Button>
+        )}
       </Link>
     </Wrapper>
   );

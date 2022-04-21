@@ -21,7 +21,7 @@ const AuthForm: FC<AuthFormProps> = ({ type }) => {
     name: "",
     password: "",
   });
-  const { setUserInfo: setAppUserInfo } = useAppContext();
+  const { setUserInfo: setAppUserInfo, setAdmin } = useAppContext();
   const navigate = useNavigate();
 
   const handleInputChange = (e: React.SyntheticEvent) => {
@@ -62,7 +62,8 @@ const AuthForm: FC<AuthFormProps> = ({ type }) => {
       setIsLoading,
       setIsSuccess,
       navigate,
-      navigateTo
+      navigateTo,
+      setAdmin
     );
   };
 

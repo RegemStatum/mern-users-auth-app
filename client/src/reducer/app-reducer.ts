@@ -8,6 +8,20 @@ const reducer = (
     const { user, token } = action.payload;
     return { ...state, user, token };
   }
+  if (action.type === AppReducerActions.SET_ADMIN) {
+    return { ...state, isAdmin: action.payload };
+  }
+  if (action.type === AppReducerActions.LOG_OUT) {
+    return {
+      ...state,
+      user: {
+        name: "",
+        email: "",
+      },
+      token: "",
+      isAdmin: false,
+    };
+  }
   return { ...state };
 };
 

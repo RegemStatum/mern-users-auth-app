@@ -27,10 +27,12 @@ const SingleBook: FC<SingleBookProps> = ({ bookId }) => {
   if (bookId !== singleBook.bookId && !isLoading) {
     return (
       <Wrapper>
-        <p>There is no such book</p>
-        <Link to="/books">
-          <Button onClick={null}>Back to all books</Button>
-        </Link>
+        <div className="no-book">
+          <p>There is no such book</p>
+          <Link to="/books">
+            <Button onClick={null}>Back to all books</Button>
+          </Link>
+        </div>
       </Wrapper>
     );
   }
@@ -84,6 +86,21 @@ const Wrapper = styled.div`
     font-size: ${st.fontSizes.fs_1000};
     font-weight: 600;
     color: ${st.colors.sp_grn_9};
+  }
+
+  .no-book {
+    width: max-content;
+    margin: 0 auto;
+
+    p {
+      margin-bottom: ${st.indentations.ind_800};
+      font-size: ${st.fontSizes.fs_800};
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+    }
   }
 `;
 
